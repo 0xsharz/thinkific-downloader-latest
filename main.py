@@ -302,7 +302,6 @@ def process_lesson(lesson_summary: dict, output_dir: str, index: int):
         return
 
     # 2. STANDARD LESSON PROCESSING (Video/Text/Assignments)
-    # "Enough Thinking" check is REMOVED. All non-quiz lessons proceed here.
     logger.info(f"Processing: {full_lesson_name}")
 
     lesson_data = fetch_lesson_details(contentable_id)
@@ -402,3 +401,4 @@ if __name__ == "__main__":
     except Exception as e:
         logger.critical(f"Unexpected crash: {e}", exc_info=True)
         sys.exit(1)
+
