@@ -10,6 +10,11 @@ from typing import Optional, Tuple
 # --- Logging Setup ---
 def setup_logging(log_file: str = "downloader.log"):
     """Configures logging to both console and file."""
+    # Clear existing handlers to avoid duplicates if re-initialized
+    root_logger = logging.getLogger()
+    if root_logger.handlers:
+        root_logger.handlers = []
+
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
@@ -46,28 +51,19 @@ def get_robust_session() -> requests.Session:
 # --- File Operations ---
 def sanitize_filename(name: str, max_length: int = 50) -> str:
     """
-    Sanitizes a string for filenames based on user requirements:
+    Sanitizes a string for filenames:
     1. Removes illegal characters.
-    2. Replaces spaces with underscores (_).
-    3. Replaces dots (.) with underscores (_).
-    4. Truncates to max_length.
+    2. Replaces spaces/dots with underscores.
+    3. Truncates to max_length.
     """
     name = str(name)
-
-    # 1. Remove invalid characters for OS
     name = re.sub(r'[<>:"/\\|?*]', '', name)
-
-    # 2. Replace spaces with underscore
     name = name.replace(' ', '_')
-
-    # 3. Replace dots with underscore
     name = name.replace('.', '_')
 
-    # 4. Truncate to avoid long paths
     if len(name) > max_length:
         name = name[:max_length]
 
-    # Strip leading/trailing underscores
     return name.strip('_')
 
 
@@ -102,11 +98,9 @@ def extract_wistia_id_from_page(url: str, session: requests.Session, headers: di
             logger.error("Login page detected. Cookie likely expired.")
             return None
 
-        # Try standard regex
         match = re.search(r'fast\.wistia\.(?:com|net)/embed/medias/([a-zA-Z0-9]+)\.', content)
         if match: return match.group(1)
 
-        # Try fallback regex
         match = re.search(r'/embed/medias/([a-zA-Z0-9]+)', content)
         if match: return match.group(1)
 
@@ -131,14 +125,11 @@ def get_wistia_bin_url(wistia_id: str, session: requests.Session, target_quality
 
         assets = w_data.get('media', {}).get('assets', [])
 
-        # 1. Exact Match
         for asset in assets:
             if asset.get('display_name') == target_quality:
-                logger.debug(f"Found exact match: {target_quality}")
                 return asset['url'], target_quality
 
-        # 2. Fallback to 720p
-        logger.warning(f"Target {target_quality} not found. Looking for 720p fallback...")
+        # Fallback
         for asset in assets:
             if asset.get('display_name') == '720p':
                 return asset['url'], '720p'
