@@ -1,6 +1,6 @@
 # Thinkific Course Downloader
 
-A Python script to automate the downloading of course videos (Wistia) and attachments from Thinkific-based learning platforms.
+A Python script to automate the downloading of course videos and attachments from Thinkific-based learning platforms.
 
 ## 📋 Prerequisites
 
