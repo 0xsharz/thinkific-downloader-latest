@@ -9,8 +9,8 @@ A Python script to automate the downloading of course videos and attachments fro
 
 ## 📷 Screenshot
 
-(Screenshots/logs.png)
-(Screenshots/folder.png)
+![Terminal Demo of Downloads](Screenshots/logs.png)
+![Folder Structure of Downloads](Screenshots/folder.png)
 
 ## 📦 Installation
 
