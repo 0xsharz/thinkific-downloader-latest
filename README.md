@@ -7,6 +7,11 @@ A Python script to automate the downloading of course videos and attachments fro
 * Python 3.8+
 * `ffmpeg` (Required for video processing)
 
+## 📷 Screenshot
+
+(Screenshots/logs.png)
+(Screenshots/folder.png)
+
 ## 📦 Installation
 
 1.  **Clone the repository:**
