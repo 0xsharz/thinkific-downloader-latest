@@ -2,6 +2,13 @@
 
 A Python script to automate the downloading of course videos and attachments from Thinkific-based learning platforms.
 
+## 🌟 What's New
+
+* **!NEW! Download Quizzes:** Automatically fetches MCQs and saves them as interactive HTML files with clickable answers and explanations.
+* **!NEW! Chapter Selection:** Interactive menu to select specific chapters to download (e.g., `1-5`, `10`, or `all`).
+* **!NEW! Resumable Downloads:** Smartly checks for existing files. If a download is interrupted, just run the script again to pick up where you left off.
+* **!NEW! Shared Files:** Automatically detects and downloads all "Shared Files" and lesson attachments.
+  
 ## 📋 Prerequisites
 
 * Python 3.8+
