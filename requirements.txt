@@ -1,0 +1,6 @@
+requests
+python-slugify
+python-dotenv
+yt-dlp
+beautifulsoup4
+tqdm
