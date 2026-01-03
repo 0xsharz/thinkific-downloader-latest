@@ -11,7 +11,7 @@ A Python script to automate the downloading of course videos and attachments fro
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/thinkific-downloader.git
+    git clone https://github.com/0xsharz/thinkific-downloader-latest.git
     cd thinkific-downloader
     ```
 
