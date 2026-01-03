@@ -60,4 +60,9 @@ A Python script to automate the downloading of course videos and attachments fro
 Run the script to start downloading:
 
 ```bash
-python main.py
+python main.py 
+```
+
+
+##  ⚠️ Disclaimer
+This tool is for personal archiving purposes only. This script only downloads enrolled courses from thinkific based website. Owner of this repository is not responsible for any misuse if you share your credentials with strangers. Please respect the Terms of Service of the platform.
