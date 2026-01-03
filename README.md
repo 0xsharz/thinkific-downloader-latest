@@ -11,7 +11,7 @@ A Python script to automate the downloading of course videos and attachments fro
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/thinkific-downloader.git](https://github.com/yourusername/thinkific-downloader.git)
+    git clone https://github.com/yourusername/thinkific-downloader.git
     cd thinkific-downloader
     ```
 
@@ -26,7 +26,7 @@ A Python script to automate the downloading of course videos and attachments fro
 2.  Add the following details (you must be enrolled in the course):
 
     ```ini
-    # URL of the course syllabus (e.g., [https://courses.example.com/api/course_player/v2/courses/course-slug](https://courses.example.com/api/course_player/v2/courses/course-slug))
+    # URL of the course syllabus (e.g., https://courses.example.com/api/course_player/v2/courses/course-slug )
     COURSE_LINK=
 
     # Your login cookie from the browser
