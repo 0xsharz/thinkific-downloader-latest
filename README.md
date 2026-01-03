@@ -40,7 +40,7 @@ A Python script to automate the downloading of course videos and attachments fro
 1.  Log in to the course website.
 2.  Open Developer Tools (**F12**) and go to the **Network** tab.
 3.  Refresh the page.
-4.  Click the first request in the list.
+4.  Find the request with endpoint /api/course_player/v2/courses/.
 5.  Scroll to **Request Headers** and copy the value of `Cookie`.
 
 ## ▶️ Usage
